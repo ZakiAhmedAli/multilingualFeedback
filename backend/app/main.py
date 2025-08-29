@@ -16,7 +16,8 @@ load_dotenv()
 # --- Gemini AI Configuration ---
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-pro')
+# /app/app/main.py
+model = genai.GenerativeModel('gemini-1.0-pro')
 
 # --- Database Configuration ---
 DATABASE_URL = os.getenv("DATABASE_URL")
