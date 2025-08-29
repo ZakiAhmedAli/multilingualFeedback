@@ -126,7 +126,7 @@ def get_all_feedback(product: Optional[str] = None, language: Optional[str] = No
 
 @app.get("/api/stats", response_model=StatsResponse)
 def get_sentiment_stats(db: Session = Depends(get_db)):
-    """Calculates and returns sentiment statistics.""" [cite: 19]
+    """Calculates and returns sentiment statistics."""
     total = db.query(Feedback).count()
     if total == 0:
         return {"total_feedback": 0, "positive_percentage": 0, "negative_percentage": 0, "neutral_percentage": 0}
