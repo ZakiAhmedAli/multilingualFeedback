@@ -17,8 +17,7 @@ load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 # /app/app/main.py
-model = genai.GenerativeModel('gemini-1.0-pro')
-
+model = genai.GenerativeModel('gemini-1.5-flash-latest')
 # --- Database Configuration ---
 DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL)
@@ -52,7 +51,7 @@ class FeedbackResponse(BaseModel):
     product: Optional[str] = None
 
     class Config:
-        orm_mode = True
+        from_attributes  = True
 
 class StatsResponse(BaseModel):
     total_feedback: int
@@ -117,7 +116,7 @@ def submit_feedback(feedback_data: FeedbackCreate, db: Session = Depends(get_db)
 
 @app.get("/api/feedback", response_model=List[FeedbackResponse])
 def get_all_feedback(product: Optional[str] = None, language: Optional[str] = None, db: Session = Depends(get_db)):
-    """Retrieves all feedback, with optional filtering by product or language.""" [cite: 9]
+    """Retrieves all feedback, with optional filtering by product or language.""" 
     query = db.query(Feedback)
     if product:
         query = query.filter(Feedback.product == product)
