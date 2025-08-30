@@ -52,6 +52,7 @@ Follow these steps to get the project running on your local machine or in a clou
 4. Build and Run with Docker Compose:  
    From the root directory, run the following command. This will build the container images and start all the services.  
    docker-compose up \--build
+   Once the process is complete, a prompt will appear to open the frontend (port 3000) in a new browser tab. Your application will function as if it were running locally on your machine.
 
 ### **Accessing the Application**
 
