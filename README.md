@@ -59,6 +59,35 @@ Follow these steps to get the project running on your local machine or in a clou
 * **Frontend Application**: Open your browser and navigate to http://localhost:3000  
 * **Backend API Docs**: The auto-generated FastAPI documentation is available at http://localhost:8000/docs
 
+# Top Recommendations
+
+## How to Get Started with GitHub Codespaces
+
+This is the most direct way to continue with the project structure I provided earlier.
+
+### Launch the Codespace
+
+1. On your repository's main page, click the green `< > Code` button.
+2. Go to the **"Codespaces"** tab.
+3. Click **"Create codespace on main"**.
+
+### Develop Online
+
+After a minute or two, a complete VS Code environment will open in your browser. This is your virtual development machine.
+
+### Run the Project
+
+1. Open the integrated terminal in the online VS Code editor (`Ctrl+` or `Cmd+`).
+2. Create your .env file and add your Gemini API key as previously instructed, or use the existing one provided in the project.
+3. Run the same command you would have run locally:
+
+   ```bash
+   docker-compose up --build
+### Codespaces will automatically detect the running services and provide you with a forwarded port.
+You'll see a pop-up to open the frontend (port 3000) in a new browser tab.
+Your application will work exactly as if it were running on your own machine.
+
+
 ## **🏗️ Architecture Overview**
 
 The application is composed of three main services orchestrated by Docker Compose.
